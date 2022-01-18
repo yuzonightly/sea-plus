@@ -1,17 +1,11 @@
 syntax = "proto3";
 
-option java_package = "sea.grpc";
-
 package sea;
 
 service SeaService {
-    rpc SeaMethod (SeaRequest) returns (SeaResponse) {}
+  rpc SeaMethod(SeaRequest) returns (SeaResponse) {}
 }
 
-message SeaRequest {
-    string request_sea_field = 1;
-}
+message SeaRequest { string request_sea_field = 1; }
 
-message SeaResponse {
-    string response_sea_field = 1;
-}
+message SeaResponse { string response_sea_field = 1; }

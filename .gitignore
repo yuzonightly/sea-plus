@@ -43,3 +43,10 @@ install_manifest.txt
 compile_commands.json
 CTestTestfile.cmake
 _deps
+
+# Protobuf and gRPC
+*.pb.cc
+*.pb.h
+*.pyc
+*.egg-info
+*_pb2.py
