@@ -45,8 +45,3 @@ CTestTestfile.cmake
 _deps
 
 # Protobuf and gRPC
-*.pb.cc
-*.pb.h
-*.pyc
-*.egg-info
-*_pb2.py
