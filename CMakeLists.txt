@@ -24,9 +24,6 @@ else()
   set(_GRPC_CPP_PLUGIN_EXECUTABLE $<TARGET_FILE:gRPC::grpc_cpp_plugin>)
 endif()
 
-
-
-
 # Proto file
 get_filename_component(sea_proto "protos/sea.proto" ABSOLUTE)
 get_filename_component(sea_proto_path "${sea_proto}" PATH)
@@ -49,7 +46,7 @@ add_custom_command(
 # Include generated *.pb.h files
 include_directories("${CMAKE_CURRENT_BINARY_DIR}")
 
-# hw_grpc_proto
+# sea_grpc_proto
 add_library(sea_grpc_proto
   ${sea_grpc_srcs}
   ${sea_grpc_hdrs}
@@ -60,7 +57,7 @@ target_link_libraries(sea_grpc_proto
   ${_GRPC_GRPCPP}
   ${_PROTOBUF_LIBPROTOBUF})
 
-# Targets greeter_[async_](client|server)
+# Targets sea_(client|server)
 foreach(_target
   sea_client sea_server)
   add_executable(${_target} "${_target}.cc")
