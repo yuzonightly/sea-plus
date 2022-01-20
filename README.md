@@ -16,11 +16,11 @@ make
 Run the server.
 
 ```bash
-./server
+./sea_server
 ```
 
 Run the client.
 
 ```bash
-./client
+./sea_client
 ```
