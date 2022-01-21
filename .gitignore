@@ -45,3 +45,5 @@ CTestTestfile.cmake
 _deps
 
 # Protobuf and gRPC
+sea_client
+sea_server

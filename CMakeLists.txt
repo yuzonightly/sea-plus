@@ -1,6 +1,14 @@
 cmake_minimum_required(VERSION 3.19)
 project(sea_grpc)
 
+set (CMAKE_CXX_STANDARD 11)
+
+if(MSVC)
+  add_definitions(-D_WIN32_WINNT=0x600)
+endif()
+
+find_package(Threads REQUIRED)
+
 # Find Protobuf installation
 find_package(Protobuf REQUIRED)
 message(STATUS "Using Protobuf ${Protobuf_VERSION}")

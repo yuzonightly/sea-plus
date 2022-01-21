@@ -42,6 +42,7 @@ private:
 
 int main(int argc, char **argv) {
   std::string server_address{"localhost:2510"};
+  // std::cout << "Listening on localhost:2510" << std::endl;
   SeaClient client{
       grpc::CreateChannel(server_address, grpc::InsecureChannelCredentials())};
   std::string request_sea_field{"world"};
