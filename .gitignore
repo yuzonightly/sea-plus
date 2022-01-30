@@ -47,3 +47,6 @@ _deps
 # Protobuf and gRPC
 sea_client
 sea_server
+build
+*.pb.cc
+*.pb.h
