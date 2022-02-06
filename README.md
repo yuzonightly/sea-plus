@@ -1,8 +1,10 @@
 # sea-plus
 
+gRPC request -> Search DynamoDB || The Movie Database API -> gRPC response.
+
 ## Prerequisites
 
-Install `grpc` and `protobuf`.
+Install `grpc`, `protobuf` and `restclient-cpp`.
 
 ## Build
 

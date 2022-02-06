@@ -50,3 +50,5 @@ sea_server
 build
 *.pb.cc
 *.pb.h
+
+.env

@@ -1,7 +1,16 @@
-#include "ocean/sea.grpc.pb.h"
-#include <grpc++/grpc++.h>
 #include <iostream>
 #include <memory>
+#include <string>
+#include <thread>
+
+#include <grpc++/grpc++.h>
+#include <grpc/support/log.h>
+
+#include "ocean/sea.grpc.pb.h"
+#include "api.h"
+
+#include "restclient-cpp/connection.h"
+#include "restclient-cpp/restclient.h"
 
 using grpc::Server;
 using grpc::ServerBuilder;
@@ -12,6 +21,7 @@ using sea::SeaResponse;
 using sea::SeaService;
 
 class SeaServiceImpl final : public SeaService::Service {
+
   Status SeaMethod(ServerContext *context, const SeaRequest *request,
                    SeaResponse *response) override {
     response->set_response_sea_field("Hello " + request->request_sea_field());

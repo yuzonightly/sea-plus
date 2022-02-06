@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.19)
 project(sea_grpc)
 
-set (CMAKE_CXX_STANDARD 11)
+set (CMAKE_CXX_STANDARD 17)
 
 if(MSVC)
   add_definitions(-D_WIN32_WINNT=0x600)
@@ -53,6 +53,7 @@ add_custom_command(
 
 # Include generated *.pb.h files
 include_directories("${CMAKE_CURRENT_BINARY_DIR}")
+include_directories("${CMAKE_CURRENT_BINARY_DIR}/ocean")
 
 # sea_grpc_proto
 add_library(sea_grpc_proto
