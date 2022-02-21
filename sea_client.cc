@@ -10,14 +10,12 @@ using sea::SeaRequest;
 using sea::SeaResponse;
 using sea::SeaService;
 
-class SeaClient
-{
+class SeaClient {
 public:
   SeaClient(std::shared_ptr<Channel> channel)
       : _stub{SeaService::NewStub(channel)} {}
 
-  std::string SeaMethod(const std::string &request_sea_field)
-  {
+  std::string SeaMethod(const std::string &request_sea_field) {
     // Prepare request
     SeaRequest request;
     request.set_request_sea_field(request_sea_field);
@@ -29,12 +27,9 @@ public:
     status = _stub->SeaMethod(&context, request, &response);
 
     // Handle response
-    if (status.ok())
-    {
+    if (status.ok()) {
       return response.response_sea_field();
-    }
-    else
-    {
+    } else {
       std::cerr << status.error_code() << ": " << status.error_message()
                 << std::endl;
       return "RPC failed";
@@ -45,8 +40,7 @@ private:
   std::unique_ptr<SeaService::Stub> _stub;
 };
 
-int main(int argc, char **argv)
-{
+int main(int argc, char **argv) {
   std::string server_address{"localhost:2510"};
   // std::cout << "Listening on localhost:2510" << std::endl;
   SeaClient client{

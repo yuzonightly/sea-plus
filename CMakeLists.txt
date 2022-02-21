@@ -32,6 +32,10 @@ else()
   set(_GRPC_CPP_PLUGIN_EXECUTABLE $<TARGET_FILE:gRPC::grpc_cpp_plugin>)
 endif()
 
+# Find cpprestsdk installation
+find_package(cpprestsdk REQUIRED)
+message(STATUS "Using cpprestsdk ${cpprestsdk_VERSION}")
+
 # Proto file
 get_filename_component(sea_proto "protos/sea.proto" ABSOLUTE)
 get_filename_component(sea_proto_path "${sea_proto}" PATH)
@@ -74,5 +78,6 @@ foreach(_target
     sea_grpc_proto
     ${_REFLECTION}
     ${_GRPC_GRPCPP}
-    ${_PROTOBUF_LIBPROTOBUF})
+    ${_PROTOBUF_LIBPROTOBUF}
+    cpprestsdk::cpprest)
 endforeach()

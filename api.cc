@@ -4,8 +4,9 @@
 using namespace API;
 using namespace std;
 
-// using API::
-
 class API::TMDB {
-
+public:
+  API::TMDB() {
+    //  RestClient::init(); 
+  }
 };

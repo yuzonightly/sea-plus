@@ -1,6 +1,10 @@
 {
     "C_Cpp.errorSquiggles": "Disabled",
     "files.associations": {
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "memory": "cpp",
+        "__config": "cpp",
+        "string": "cpp",
+        "*.ipp": "cpp"
     }
 }
