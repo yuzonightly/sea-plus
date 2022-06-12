@@ -70,8 +70,8 @@ target_link_libraries(sea_grpc_proto
   ${_GRPC_GRPCPP}
   ${_PROTOBUF_LIBPROTOBUF})
 
-# Targets sea_(client|server)
-foreach(_target
+  # Targets sea_(client|server)
+  foreach(_target
   sea_client sea_server)
   add_executable(${_target} "${_target}.cc")
   target_link_libraries(${_target}
